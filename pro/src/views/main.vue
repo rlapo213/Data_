@@ -2,7 +2,7 @@
   <div class="main">
     <div class="l">
     <div class="d" @click="toname()">이름 궁합 보기</div>
-    <div class="d" @click="tograde()">성적 보기</div>
+    <div class="d" @click="tograde()">등급 보기</div>
     <div class="d" @click="toave()">평균 계산하기</div>
     <div class="d" @click="tobmi()">BMI 보기</div>
     </div>

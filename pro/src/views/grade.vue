@@ -1,6 +1,6 @@
 <template>
   <div>
-    성적 계산.
+    등급 계산.
     <br />
     <br />
     <input type="text" placeholder="총 인원수 입력" v-model="totalnum" />
@@ -9,6 +9,7 @@
     <br />
     <button @click="getGrade(totalnum,yournum)">입력 후 클릭</button>
     <hr />
+    <div id="a"></div>
   </div>
 </template>
 
@@ -23,27 +24,28 @@ export default {
   methods: {
     getGrade() {
       var yourgrade = (this.yournum / this.totalnum) * 100;
+      var k = document.getElementById("a")
       if (this.totalnum * this.yournum == 0) {
-        console.log("제대로 입력");
+        k.innerHTML = ("제대로 입력해주세요 ^ㅡ^");
       } else {
         if (yourgrade <= 4) {
-          console.log("1등급");
+          k.innerHTML = ("1등급");
         } else if (yourgrade <= 11) {
-          console.log("2");
+          k.innerHTML = ("2등급");
         } else if (yourgrade <= 23) {
-          console.log("3");
+          k.innerHTML = ("3등급");
         } else if (yourgrade <= 40) {
-          console.log("4");
+          k.innerHTML = ("4등급");
         } else if (yourgrade <= 60) {
-          console.log("5");
+          k.innerHTML = ("5등급");
         } else if (yourgrade <= 77) {
-          console.log("6");
+          k.innerHTML = ("6등급");
         } else if (yourgrade <= 89) {
-          console.log("7");
+          k.innerHTML = ("7등급");
         } else if (yourgrade <= 96) {
-          console.log("8");
+          k.innerHTML = ("8등급");
         } else if (yourgrade <= 100) {
-          console.log("9");
+          k.innerHTML = ("9등급");
         }
       }
     }
@@ -52,4 +54,12 @@ export default {
 </script>
 
 <style>
+#a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 6em;
+  height: 30vh;
+}
 </style>

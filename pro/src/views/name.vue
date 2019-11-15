@@ -17,8 +17,7 @@
     <button @click="getConcord()" v-if="a==0">점수 보기</button>
     <br />
     <hr />
-
-    <br />
+    <div id="a"></div>
   </div>
 </template>
 
@@ -29,7 +28,6 @@ export default {
       name: "",
       namee: "",
       
-      score: "",
       m: 0,
       array: new Array(),
       count: 0,
@@ -403,6 +401,8 @@ export default {
           var back = (2 * this.array[1] + this.array[2] + this.array[3]) % 10;
           var outcome = String(front) + back;
           console.log(outcome);
+          var k =document.getElementById("a")
+          k.innerHTML = outcome
           break;
         case 5:
           //confirm
@@ -420,6 +420,8 @@ export default {
             10;
           var outcome = String(front) + back;
           console.log(outcome);
+          var k =document.getElementById("a")
+          k.innerHTML = outcome
           break;
         case 6:
           //confirm
@@ -439,6 +441,8 @@ export default {
             10;
           var outcome = String(front) + back;
           console.log(outcome);
+          var k =document.getElementById("a")
+          k.innerHTML = outcome
           break;
 
         case 7:
@@ -456,6 +460,8 @@ export default {
             10;
           var outcome = String(front) + back;
           console.log(outcome);
+          var k =document.getElementById("a")
+          k.innerHTML = outcome
           break;
 
         case 8:
@@ -478,6 +484,8 @@ export default {
             10;
           var outcome = String(front) + back;
           console.log(outcome);
+          var k =document.getElementById("a")
+          k.innerHTML = outcome
           break;
 
         default:
@@ -500,4 +508,12 @@ export default {
 </script>
 
 <style>
+#a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 6em;
+  height: 30vh;
+}
 </style>
