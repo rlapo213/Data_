@@ -14,16 +14,16 @@
     <button @click="getBmi(height,weight)" class="k">입력 후 클릭</button>
     
     </div>
-    <div id="bo" v-if="a==1">
+    <!-- <div id="bo" v-if="a==1">
     <div class="b">저체중</div>
     <div class="b">정상</div>
     <div class="b">과체중</div>
     <div class="b">비만1단계</div>
     <div class="b">비만2단계</div>
     <div class="b">비만3단계</div>
-    </div>
-    <h2>비만도 결과 : </h2>
-    <h2>나의 BMI 지수 : </h2>
+    </div> -->
+    <h2>비만도 결과 : <div></div> <div id="result"></div>  </h2> 
+    <h2>나의 BMI 지수 : <div></div> <div id="idx"></div>  </h2> 
     
   </div>
 </template>
@@ -41,25 +41,28 @@ export default {
     getBmi() {
       var bmih = this.height / 100;
       var bmi = this.weight / (bmih * bmih);
-      console.log(bmi.toFixed(2));
+      var k= document.getElementById("result");
+      var g= document.getElementById("idx");
+      
+      k.innerHTML = (bmi.toFixed(2));
       this.a++
       if(bmi<18.5){
-        console.log("저체중")
+        g.innerHTML = ("저체중")
       }
       else if(bmi<23){
-        console.log("정상")
+        g.innerHTML = ("정상")
       }
       else if(bmi<25){
-        console.log("과체중")
+        g.innerHTML = ("과체중")
       }
       else if(bmi<27){
-        console.log("비만 1단계")
+        g.innerHTML = ("비만 1단계")
       }
       else if(bmi<30){
-        console.log("비만 2단계")
+        g.innerHTML = ("비만 2단계")
       }
       else{
-        console.log("비만 3단계")
+        g.innerHTML = ("비만 3단계")
       }
     }
   }
@@ -97,5 +100,6 @@ export default {
 }
 h2{
   font-size: 2em;
+  display: flex;
 }
 </style>

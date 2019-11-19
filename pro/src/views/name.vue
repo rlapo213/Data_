@@ -402,7 +402,7 @@ export default {
           var outcome = String(front) + back;
           console.log(outcome);
           var k =document.getElementById("a")
-          k.innerHTML = outcome
+          k.innerHTML = outcome + "점"
           break;
         case 5:
           //confirm
@@ -421,7 +421,7 @@ export default {
           var outcome = String(front) + back;
           console.log(outcome);
           var k =document.getElementById("a")
-          k.innerHTML = outcome
+          k.innerHTML = outcome + "점"
           break;
         case 6:
           //confirm
@@ -442,7 +442,7 @@ export default {
           var outcome = String(front) + back;
           console.log(outcome);
           var k =document.getElementById("a")
-          k.innerHTML = outcome
+          k.innerHTML = outcome + "점"
           break;
 
         case 7:
@@ -461,7 +461,7 @@ export default {
           var outcome = String(front) + back;
           console.log(outcome);
           var k =document.getElementById("a")
-          k.innerHTML = outcome
+          k.innerHTML = outcome + "점"
           break;
 
         case 8:
@@ -485,7 +485,7 @@ export default {
           var outcome = String(front) + back;
           console.log(outcome);
           var k =document.getElementById("a")
-          k.innerHTML = outcome
+          k.innerHTML = outcome + "점"
           break;
 
         default:
@@ -496,11 +496,14 @@ export default {
     
   },
   watch: {
-    //4글자 치면 아예 안쳐지게 하고싶음
     name(next, prev) {
       if (next.length >= 5) {
-        prev = "";
         this.name = prev;
+      }
+    },
+    namee(next, prev) {
+      if (next.length >= 5) {
+        this.namee = prev;
       }
     }
   }
