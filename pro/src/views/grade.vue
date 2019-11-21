@@ -2,12 +2,13 @@
   <div>
     등급 계산.
     <br />
+    엔터로 넘어가기 ^ㅡ^
     <br />
-    <input type="text" placeholder="총 인원수 입력" v-model="totalnum" />
+    <input type="text" placeholder="총 인원수 입력" v-model="totalnum" v-on:keyup.enter="move()"/>
     <br />
-    <input type="text" placeholder="당신의 등수 입력" v-model="yournum" />
+    <input type="text" placeholder="당신의 등수 입력" v-model="yournum" v-on:keyup.enter="move()" id="num"/>
     <br />
-    <button @click="getGrade(totalnum,yournum)">입력 후 클릭</button>
+    <button @click="getGrade(totalnum,yournum)" id="c">입력 후 클릭</button>
     <hr />
     <div id="a"></div>
   </div>
@@ -18,7 +19,8 @@ export default {
   data() {
     return {
       totalnum: "",
-      yournum: ""
+      yournum: "",
+      k : 0
     };
   },
   methods: {
@@ -47,6 +49,18 @@ export default {
         } else if (yourgrade <= 100) {
           k.innerHTML = ("9등급");
         }
+      }
+    },
+    move(){
+      if(this.k==0){
+        var z = document.getElementById("num")
+        z.focus()
+        this.k++
+      }
+      else if(this.k==1){
+        var n = document.getElementById("c");
+        n.focus()
+        
       }
     }
   }

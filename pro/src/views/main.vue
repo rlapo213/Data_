@@ -3,7 +3,6 @@
     <div class="l">
     <div class="d" @click="toname()">이름 궁합 보기</div>
     <div class="d" @click="tograde()">등급 보기</div>
-    <div class="d" @click="toave()">평균 계산하기</div>
     <div class="d" @click="tobmi()">BMI 보기</div>
     </div>
   </div>
@@ -20,9 +19,6 @@ export default {
     },
     tograde() {
       this.$router.push("grade");
-    },
-    toave() {
-      this.$router.push("ave");
     },
     tobmi() {
       this.$router.push("bmi");

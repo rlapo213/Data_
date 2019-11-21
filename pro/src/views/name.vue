@@ -3,18 +3,16 @@
     이름 계산.
     <br />
     <br />
-    <input type="text" v-model="name" />
-    <br />
-    <button @click="getName(name)">이름 입력 후 클릭</button>
+    이름 입력 후 엔터를 누르세요. <br>
 
+    <input type="text" v-model="name" v-on:keyup.enter="getName(name)">
     <br />
     <br />
-    <input type="text" v-model="namee" />
-    <br />
-    <button @click="getName(namee)">이름 입력 후 클릭</button>
+    <input type="text" v-model="namee" v-on:keyup.enter="getName(namee)" id="se">
+    <br />  
     <br />
 
-    <button @click="getConcord()" v-if="a==0">점수 보기</button>
+    <button @click="getConcord()" v-if="a==0" id="button">점수 보기</button>
     <br />
     <hr />
     <div id="a"></div>
@@ -27,7 +25,7 @@ export default {
     return {
       name: "",
       namee: "",
-      
+      k : 0,
       m: 0,
       array: new Array(),
       count: 0,
@@ -362,6 +360,17 @@ export default {
       name.split("").forEach(str => {
         this.getStroke(this.getWord(str));
       });
+      if(this.k==0){
+        var z = document.getElementById("se");
+        z.focus()
+        this.k++;
+      }
+      else if(this.k==1){
+        var m = document.getElementById("button");
+        m.focus()
+        this.k++;
+      }
+      
     },
 
     getConcord() {
