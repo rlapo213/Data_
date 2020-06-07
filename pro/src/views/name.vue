@@ -1,6 +1,6 @@
 <template>
   <div id="layout">
-    이름 계산.
+    이름 궁합 보기
     <br />
     <br />
     이름 입력 후 엔터를 누르세요. <br>
