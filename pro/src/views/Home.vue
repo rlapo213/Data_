@@ -1,7 +1,6 @@
 <template>
   <div class="home">
-    <div class="hi">안녕하세요</div>
-    <div class="hi" @click="tomain()">^^</div>
+    <div class="hi" @click="tomain()">메인으로 가기</div>
     
   </div>
 </template>
